@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from playground.views import hello, hours_ahead, time
+from playground.views import date, hello, hours_ahead, time
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^date/$', date),
     url(r'^hello/$', hello),
     url(r'^time/$', time),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead)
