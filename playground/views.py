@@ -6,7 +6,8 @@ def hello(request):
     return HttpResponse("<h1>Hello world!</h1>")
 
 def time(request):
-    return HttpResponse("<p>It's now %s.</p>" % datetime.datetime.now())
+    now = datetime.datetime.now()
+    return render(request, 'current_datetime.html', {'current_datetime': now})
 
 def date(request):
     now = datetime.datetime.now()
