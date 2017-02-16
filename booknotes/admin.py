@@ -10,6 +10,10 @@ class BookAdmin(admin.ModelAdmin):
     list_filter = ('publication_date',)
     date_hierarchy = 'publication_date'
     ordering = ('-publication_date',)
+    # modify the fields list to enable/disable fields in admin site
+    fields = ('title', 'authors', 'publisher', 'publication_date')
+    filter_horizontal = ('authors',)
+    raw_id_fields = ('publisher',)
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
