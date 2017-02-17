@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from booknotes import views
 from django.conf.urls import url
 from django.contrib import admin
 from playground.views import date, display_meta, hello, hours_ahead, time
@@ -23,5 +24,7 @@ urlpatterns = [
     url(r'^display_meta/$', display_meta),
     url(r'^hello/$', hello),
     url(r'^time/$', time),
-    url(r'^time/plus/(\d{1,2})/$', hours_ahead)
+    url(r'^time/plus/(\d{1,2})/$', hours_ahead),
+    url(r'^search-form/$', views.search_form),
+    url(r'^search/$', views.search),
 ]
